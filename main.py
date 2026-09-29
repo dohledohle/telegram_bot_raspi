@@ -20,6 +20,6 @@ async def display_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 
 app = ApplicationBuilder().token(TOKEN).build()
-app.add_handler(MessageHandler(filters.ALL, handle_update))
+app.add_handler(MessageHandler(filters.ALL & ~filters.COMMAND, handle_update))
 app.add_handler(CommandHandler("display", display_command))
 app.run_polling()
