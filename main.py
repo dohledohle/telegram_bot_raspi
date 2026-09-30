@@ -9,7 +9,6 @@ from gpiozero import Button
 
 load_dotenv()
 TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-lcd = LCD()
 last_chat_id = None
 button = Button(17)
 event_loop = None
