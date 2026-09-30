@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31d271c0-6d59-49f7-9e3c-47c5875963eb" name="Changes" comment="Move LCD initialization to hardware.py">
+    <list default="true" id="31d271c0-6d59-49f7-9e3c-47c5875963eb" name="Changes" comment="Move button initialization to hardware.py, add debouncing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hardware.py" beforeDir="false" afterPath="$PROJECT_DIR$/hardware.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -146,7 +146,15 @@
       <option name="project" value="LOCAL" />
       <updated>1790767237736</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Move button initialization to hardware.py, add debouncing">
+      <option name="closed" value="true" />
+      <created>1790767573709</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1790767573709</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -155,22 +163,7 @@
     <MESSAGE value="added textwrap" />
     <MESSAGE value="Add read receipt confirmation via physical button&#10;&#10;- Wire button to GPIO17 using gpiozero&#10;- Store chat_id of last /display command to know who to notify&#10;- Bridge GPIO callback (sync) to bot's async event loop via&#10;  asyncio.run_coroutine_threadsafe&#10;- Send confirmation message when button is pressed" />
     <MESSAGE value="Move LCD initialization to hardware.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Move LCD initialization to hardware.py" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>3</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>17</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Move button initialization to hardware.py, add debouncing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Move button initialization to hardware.py, add debouncing" />
   </component>
 </project>
