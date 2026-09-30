@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31d271c0-6d59-49f7-9e3c-47c5875963eb" name="Changes" comment="establish connection to lcd display">
+    <list default="true" id="31d271c0-6d59-49f7-9e3c-47c5875963eb" name="Changes" comment="added textwrap">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -107,13 +108,22 @@
       <option name="project" value="LOCAL" />
       <updated>1790751942800</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added textwrap">
+      <option name="closed" value="true" />
+      <created>1790752520164</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1790752520164</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit: basic telegram bot structure" />
     <MESSAGE value="establish connection to lcd display" />
-    <option name="LAST_COMMIT_MESSAGE" value="establish connection to lcd display" />
+    <MESSAGE value="added textwrap" />
+    <option name="LAST_COMMIT_MESSAGE" value="added textwrap" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
