@@ -33,3 +33,11 @@ async def display_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def clear_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     lcd.clear()
     await update.message.reply_text("Display zurückgesetzt!")
+
+async def lightmode(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    lcd.backlight(True)
+    await update.message.reply_text("Display eingeschaltet!")
+
+async def darkmode(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    lcd.backlight(False)
+    await update.message.reply_text("Display ausgeschaltet!")
