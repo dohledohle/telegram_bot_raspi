@@ -2,15 +2,13 @@ import os
 from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, CommandHandler, filters
-from hardware import lcd
+from hardware import lcd, button
 import textwrap
 import asyncio
-from gpiozero import Button
 
 load_dotenv()
 TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 last_chat_id = None
-button = Button(17)
 event_loop = None
 
 async def send_read_receipt():

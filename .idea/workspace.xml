@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31d271c0-6d59-49f7-9e3c-47c5875963eb" name="Changes" comment="Add read receipt confirmation via physical button&#10;&#10;- Wire button to GPIO17 using gpiozero&#10;- Store chat_id of last /display command to know who to notify&#10;- Bridge GPIO callback (sync) to bot's async event loop via&#10;  asyncio.run_coroutine_threadsafe&#10;- Send confirmation message when button is pressed">
-      <change afterPath="$PROJECT_DIR$/handlers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hardware.py" afterDir="false" />
+    <list default="true" id="31d271c0-6d59-49f7-9e3c-47c5875963eb" name="Changes" comment="Move LCD initialization to hardware.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hardware.py" beforeDir="false" afterPath="$PROJECT_DIR$/hardware.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +62,11 @@
     "to.speed.mode.migration.done": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Installer\PycharmProjects\Raspi_Text" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -125,7 +130,23 @@
       <option name="project" value="LOCAL" />
       <updated>1790764413393</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Move LCD initialization to hardware.py">
+      <option name="closed" value="true" />
+      <created>1790767044945</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1790767044945</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Move LCD initialization to hardware.py">
+      <option name="closed" value="true" />
+      <created>1790767237736</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1790767237736</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -133,7 +154,8 @@
     <MESSAGE value="establish connection to lcd display" />
     <MESSAGE value="added textwrap" />
     <MESSAGE value="Add read receipt confirmation via physical button&#10;&#10;- Wire button to GPIO17 using gpiozero&#10;- Store chat_id of last /display command to know who to notify&#10;- Bridge GPIO callback (sync) to bot's async event loop via&#10;  asyncio.run_coroutine_threadsafe&#10;- Send confirmation message when button is pressed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add read receipt confirmation via physical button&#10;&#10;- Wire button to GPIO17 using gpiozero&#10;- Store chat_id of last /display command to know who to notify&#10;- Bridge GPIO callback (sync) to bot's async event loop via&#10;  asyncio.run_coroutine_threadsafe&#10;- Send confirmation message when button is pressed" />
+    <MESSAGE value="Move LCD initialization to hardware.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Move LCD initialization to hardware.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -142,6 +164,11 @@
           <url>file://$PROJECT_DIR$/main.py</url>
           <line>3</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
