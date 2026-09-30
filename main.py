@@ -2,7 +2,7 @@ import os
 from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, CommandHandler, filters
-from rpi_lcd import LCD
+from hardware import lcd
 import textwrap
 import asyncio
 from gpiozero import Button
