@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, MessageHandler, CommandHandler, filters
 from rpi_lcd import LCD
+import textwrap
 
 load_dotenv()
 TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
@@ -11,16 +12,20 @@ lcd = LCD()
 
 async def handle_update(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print(update)
-    await context.bot.send_message(chat_id=update.message.chat_id, text="Da bin ich!")
+    await context.bot.send_message(chat_id=update.message.chat_id,
+                                   text="Da bin ich!")
 
 async def display_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not context.args:
-        await update.message.reply_text("Bitte gib einen Text ein, zB so: '/display Das ist ein Text!'")
+        await update.message.reply_text("Bitte gib einen Text ein, zB so: "
+                                        "'/display Das ist ein Text!'")
         return
 
     text = " ".join(context.args)
-    zeile1 = text[:16]
-    zeile2 = text[16:32]
+    zeilen = textwrap.wrap(text, width=16)
+
+    zeile1 = zeilen[0] if len(zeilen) > 0 else ""
+    zeile2 = zeilen[1] if len(zeilen) > 1 else ""
 
     lcd.clear()
     lcd.text(zeile1, 1)
