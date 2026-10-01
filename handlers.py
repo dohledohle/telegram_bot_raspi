@@ -31,7 +31,7 @@ async def handle_update(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await context.bot.send_message(chat_id=update.message.chat_id, text=random.choice(antworten))
 
 async def display_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    global last_chat_id, current_text
+    global last_chat_id, current_text, backlight_on
     last_chat_id = update.message.chat_id
 
     if not context.args:
@@ -47,6 +47,7 @@ async def display_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     zeile2 = zeilen[1] if len(zeilen) > 1 else ""
 
     lcd.clear()
+    backlight_on = True
     lcd.text(zeile1, 1)
     lcd.text(zeile2, 2)
 
