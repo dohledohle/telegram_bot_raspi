@@ -47,6 +47,7 @@ async def display_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     zeile2 = zeilen[1] if len(zeilen) > 1 else ""
 
     lcd.clear()
+    lcd.backlight(True)
     backlight_on = True
     lcd.text(zeile1, 1)
     lcd.text(zeile2, 2)
