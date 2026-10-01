@@ -2,14 +2,33 @@ import textwrap
 from telegram import Update
 from telegram.ext import ContextTypes
 from hardware import lcd
+import random
 
 last_chat_id = None
 backlight_on = True
 current_text = None
 
+antworten = [
+    "Da bin ich!",
+    "Ja, bitte?",
+    "Huhu!",
+    "Was gibt's?",
+    "Moin!",
+    "Was kann ich für dich tun?",
+    "Wollen wir eine Nachricht senden?",
+    "Was treibt dich um?",
+    "Ja?",
+    "Hey!",
+    "Ich bin ganz Ohr :)",
+    "Was wollen wir tun?",
+    "Hallo, da bin ich?",
+    "Stets zu Diensten!",
+    "Woran denkst du?"
+]
+
 async def handle_update(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print(update)
-    await context.bot.send_message(chat_id=update.message.chat_id, text="Da bin ich!")
+    await context.bot.send_message(chat_id=update.message.chat_id, text=random.choice(antworten))
 
 async def display_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     global last_chat_id, current_text

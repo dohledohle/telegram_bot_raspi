@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31d271c0-6d59-49f7-9e3c-47c5875963eb" name="Changes" comment="Add light and dark mode">
+    <list default="true" id="31d271c0-6d59-49f7-9e3c-47c5875963eb" name="Changes" comment="Add status command and light/dark mode tracking">
       <change beforePath="$PROJECT_DIR$/handlers.py" beforeDir="false" afterPath="$PROJECT_DIR$/handlers.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -169,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1790807227784</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Add status command and light/dark mode tracking">
+      <option name="closed" value="true" />
+      <created>1790807883055</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1790807883055</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -181,6 +189,7 @@
     <MESSAGE value="Move button initialization to hardware.py, add debouncing" />
     <MESSAGE value="Split handlers into separate module" />
     <MESSAGE value="Add light and dark mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add light and dark mode" />
+    <MESSAGE value="Add status command and light/dark mode tracking" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add status command and light/dark mode tracking" />
   </component>
 </project>
