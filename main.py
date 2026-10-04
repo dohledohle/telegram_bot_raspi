@@ -14,11 +14,15 @@ async def send_read_receipt():
         await app.bot.send_message(chat_id=handlers.last_chat_id, text="Nachricht wurde gelesen!")
 
 def button_pressed():
+    global dim_timer
     if handlers.backlight_on:
         if event_loop is not None:
             asyncio.run_coroutine_threadsafe(send_read_receipt(), event_loop)
     else:
         handlers.turn_on_backlight()
+        if dim_timer is not None:
+            dim_timer.cancel()
+        dim_timer = asyncio.create_task(handlers.auto_darkmode())
 
 async def setup(application):
     global event_loop
