@@ -10,7 +10,7 @@ backlight_on = True
 current_text = None
 dim_timer = None
 
-timeout_seconds = 15
+timeout_seconds = 120
 
 antworten = [
     "Da bin ich!",
