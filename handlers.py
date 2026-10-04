@@ -100,3 +100,9 @@ def turn_on_backlight(): #Hilfsfunktion, wird vom Nutzer nicht direkt aufgerufen
     global backlight_on
     backlight_on = True
     lcd.backlight(True)
+
+def start_dim_timer(): #Brücke, um Timer zurückzusetzen, nachdem Bildschirm aufgeweckt
+    global dim_timer
+    if dim_timer is not None:
+        dim_timer.cancel()
+    dim_timer = asyncio.create_task(auto_darkmode())
