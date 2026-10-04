@@ -14,12 +14,16 @@ async def send_read_receipt():
         await app.bot.send_message(chat_id=handlers.last_chat_id, text="Nachricht wurde gelesen!")
 
 def button_pressed():
-    if event_loop is not None:
-        asyncio.run_coroutine_threadsafe(send_read_receipt(), event_loop)
+    if handlers.backlight_on:
+        if event_loop is not None:
+            asyncio.run_coroutine_threadsafe(send_read_receipt(), event_loop)
+    else:
+        handlers.turn_on_backlight()
 
 async def setup(application):
     global event_loop
     event_loop = asyncio.get_running_loop()
+
 
 button.when_pressed = button_pressed
 

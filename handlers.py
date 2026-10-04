@@ -1,3 +1,4 @@
+import asyncio
 import textwrap
 from telegram import Update
 from telegram.ext import ContextTypes
@@ -7,6 +8,9 @@ import random
 last_chat_id = None
 backlight_on = True
 current_text = None
+dim_timer = None
+
+timeout_seconds = 15
 
 antworten = [
     "Da bin ich!",
@@ -28,10 +32,11 @@ antworten = [
 
 async def handle_update(update: Update, context: ContextTypes.DEFAULT_TYPE):
     print(update)
-    await context.bot.send_message(chat_id=update.message.chat_id, text=random.choice(antworten))
+    await context.bot.send_message(chat_id=update.message.chat_id,
+                                   text=random.choice(antworten))
 
 async def display_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    global last_chat_id, current_text, backlight_on
+    global last_chat_id, current_text, backlight_on, dim_timer
     last_chat_id = update.message.chat_id
 
     if not context.args:
@@ -51,6 +56,10 @@ async def display_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     backlight_on = True
     lcd.text(zeile1, 1)
     lcd.text(zeile2, 2)
+
+    if dim_timer is not None:
+        dim_timer.cancel()
+    dim_timer = asyncio.create_task(auto_darkmode())
 
     await update.message.reply_text("Auf dem Display angezeigt!")
 
@@ -75,4 +84,19 @@ async def darkmode(update: Update, context: ContextTypes.DEFAULT_TYPE):
 async def status(update: Update, context: ContextTypes.DEFAULT_TYPE):
     beleuchtung = "an" if backlight_on else "aus"
     text_status = f"'{current_text}'" if current_text else "kein Text"
-    await update.message.reply_text(f"Beleuchtung: {beleuchtung}\nAngezeigter Text: {text_status}")
+    await update.message.reply_text(f"Beleuchtung: {beleuchtung}\nAngezeigter "
+                                    f"Text: {text_status}")
+
+async def auto_darkmode():
+    global backlight_on
+    try:
+        await asyncio.sleep(timeout_seconds)
+        lcd.backlight(False)
+        backlight_on = False
+    except asyncio.CancelledError:
+        pass
+
+def turn_on_backlight(): #Hilfsfunktion, wird vom Nutzer nicht direkt aufgerufen
+    global backlight_on
+    backlight_on = True
+    lcd.backlight(True)
